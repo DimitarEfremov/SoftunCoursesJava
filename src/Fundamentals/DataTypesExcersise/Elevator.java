@@ -1,0 +1,24 @@
+package Fundamentals.DataTypesExcersise;
+
+import java.util.Scanner;
+
+public class Elevator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int people = Integer.parseInt(scanner.nextLine());
+        int capacity = Integer.parseInt(scanner.nextLine());
+
+        //        int courses = 0;
+
+        //        while (people >0) {
+        //            courses++;
+        //            people -= capacity;
+
+        //        }
+
+        int courses = (int) Math.ceil( (double) people / capacity);
+
+        System.out.println(courses);
+    }
+}
