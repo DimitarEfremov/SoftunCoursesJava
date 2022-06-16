@@ -15,24 +15,23 @@ public class ArrayManipulator {
             String[] command = input.split(" ");
             switch (command[0]){
                 case "exchange":
-                    inputArray = exchangeArray(command[1], inputArray );
+                    inputArray = exchangeArrayAfterIndex(command[1], inputArray );
                     break;
             }
-
 
 
             input = scanner.nextLine();
         }
     }
 
-    private static int[] exchangeArray (String arrayIndex, int[] inputArray){
+    private static int[] exchangeArrayAfterIndex(String arrayIndex, int[] inputArray){
         int index = Integer.parseInt(arrayIndex);
 
-        int[] newFirstHalf = new int[inputArray.length-index];
-        int[] newSecondHalf =  new int[index];
+        int[] newFirstHalf = new int[inputArray.length - 1 -index];
+        int[] newSecondHalf =  new int[inputArray.length - newFirstHalf.length];
 
         for (int i = 0; i < newFirstHalf.length; i++) {
-            newFirstHalf[i] = inputArray[index + 1 + i];
+            newFirstHalf[i] = inputArray[index +1 + i];
         }
         for (int i = 0; i <newSecondHalf.length ; i++) {
             newSecondHalf[i] = inputArray[i];
@@ -41,7 +40,7 @@ public class ArrayManipulator {
             inputArray[i] = newFirstHalf[i];
         }
         for (int i = 0; i < newSecondHalf.length ; i++) {
-            inputArray[inputArray.length - index + i] = newSecondHalf[i];
+            inputArray[newFirstHalf.length + i] = newSecondHalf[i];
         }
 
         return inputArray;
