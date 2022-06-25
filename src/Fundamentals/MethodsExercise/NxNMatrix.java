@@ -6,7 +6,7 @@ public class NxNMatrix {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Integer input = Integer.parseInt(scanner.nextLine());
+        int input = Integer.parseInt(scanner.nextLine());
 
         printNxnMatrix(input);
     }

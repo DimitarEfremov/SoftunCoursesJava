@@ -41,19 +41,20 @@ public class TakeSkipRope {
             int numbersToTake = takeList.get(i);
 
             for (int j = 0; j <numbersToTake ; j++) {
-                String element = letters.get(0);
-                result += element;
-                letters.remove(0);
+                if (!letters.isEmpty()) {
+                    String element = letters.get(0);
+                    result += element;
+                    letters.remove(0);
+                }
             }
-            int numbersToSkip = skipList.get(i);
-            for (int j = 0; j < numbersToSkip ; j++) {
-                letters.remove(0);
+            if (!letters.isEmpty()) {
+                int numbersToSkip = skipList.get(i);
+                for (int j = 0; j < numbersToSkip; j++) {
+                    letters.remove(0);
+                }
             }
-
         }
 
-        System.out.println(takeList);
-        System.out.println(skipList);
         System.out.println(result);
     }
 }
