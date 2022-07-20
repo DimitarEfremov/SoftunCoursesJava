@@ -19,15 +19,15 @@ public class Articles {
     }
     // funkcionalnosti -> metodi
 
-    public void Edit (String newContent){
+    public void edit (String newContent){
             this.content = newContent;
     }
 
-    public void ChangeAuthor (String newAuthor){
+    public void changeAuthor (String newAuthor){
             this.author = newAuthor;
     }
 
-    public void Rename (String newTitle){
+    public void rename (String newTitle){
             this.title = newTitle;
     }
 
