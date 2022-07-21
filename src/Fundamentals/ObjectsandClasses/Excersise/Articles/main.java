@@ -17,8 +17,8 @@ public class main {
 
         for (int i = 0; i < n; i++) {
             String input = scanner.nextLine();
-            String command = input.split(": ")[0];
-            String newValue = input.split(": ")[1];
+            String command = input.split("\\: ")[0];
+            String newValue = input.split("\\: ")[1];
 
             switch (command){
                 case "Edit":

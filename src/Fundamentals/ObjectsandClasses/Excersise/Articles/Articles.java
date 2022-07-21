@@ -31,4 +31,9 @@ public class Articles {
             this.title = newTitle;
     }
 
+    @Override
+    public String toString() {
+        return this.title + " - " + this.content + ": " + this.author;
+    }
+
 }
