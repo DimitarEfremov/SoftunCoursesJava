@@ -16,7 +16,7 @@ public class StarEnigma {
         List<String> toBeAttacked = new ArrayList<>();
         List<String> toBeDestroyed = new ArrayList<>();
 
-        String regex = "@(?<planet>[A-Wa-w]+)[^@\\-!:>]*:\\d+[^@\\-!:>]*!(?<atc>[AD])![^@\\-!:>]*->\\d+";
+        String regex = "@(?<planet>[A-Za-z]+)[^@\\-!:>]*:\\d+[^@\\-!:>]*!(?<atc>[AD])![^@\\-!:>]*->\\d+";
         Pattern pattern = Pattern.compile(regex);
 
 

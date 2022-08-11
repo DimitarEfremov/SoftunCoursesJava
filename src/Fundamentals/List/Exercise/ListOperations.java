@@ -43,11 +43,13 @@ public class ListOperations {
                     numbersList.remove(0);
                 }
             } else if (command.contains("Shift right")){
-                int numbersToShift = numbersList.get(numbersList.size()-1);
-                numbersList.add(0,numbersToShift);
-                numbersList.remove(numbersList.size()-1);
+                int shifts = Integer.parseInt(command.split(" ")[2]);
+                for (int i = 0; i <shifts ; i++) {
+                    int numbersToShift = numbersList.get(numbersList.size()-1);
+                    numbersList.add(0,numbersToShift);
+                    numbersList.remove(numbersList.size()-1);
+                }
             }
-
 
 
             command = scanner.nextLine();
