@@ -1,4 +1,4 @@
-package Fundamentals.ExamPreparation.FirstPrep;
+package Fundamentals.FinalExamPreparation.FirstPrep;
 
 import java.util.Scanner;
 
