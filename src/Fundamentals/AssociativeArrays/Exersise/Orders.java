@@ -18,12 +18,9 @@ public class Orders {
             double price = Double.parseDouble(input.split(" ")[1]);
             int quantity = Integer.parseInt(input.split(" ")[2]);
 
-            if (priceMap.containsKey(product)) {
-                double currentValue = priceMap.get(product);
-                priceMap.put(product, currentValue + price);
-            } else {
+
                 priceMap.put(product, price);
-            }
+
 
             if (quantityMap.containsKey(product)) {
                 int currentValue = quantityMap.get(product);
