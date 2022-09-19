@@ -1,4 +1,4 @@
-package Advanced.StacksandQueues.Excersise;
+package Advanced.StacksandQueues.StacksandQueues.Excersise;
 
 import java.util.Scanner;
 
