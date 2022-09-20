@@ -20,11 +20,15 @@ public class PositionsOf {
                     System.out.printf("%d %d%n", r, c);
                     isNotFound = false;
                 }
+
             }
+
         }
         if (isNotFound){
             System.out.println("not found");
         }
+
+
 
 
     }
@@ -34,7 +38,7 @@ public class PositionsOf {
 
         int [] [] matrix = new int[dimensions[0]][dimensions[1]];
 
-        for (int i = 0; i < matrix.length ; i++) {
+        for (int i = 0; i <dimensions[0] ; i++) {
 
             matrix[i] = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         }
