@@ -15,11 +15,12 @@ public class TheHeiganDance {
         String input = scanner.nextLine();
 
         boolean isPoisoned = false;
+        boolean playerIsLive = true;
 
         int playerRow = 7;
         int playerCol = 7;
 
-        while (healthHeigan >= 0 || healthPlaier >= 0) {
+        while (healthHeigan > 0 && healthPlaier > 0) {
             String spell = input.split(" ")[0];
             int attackedRow = Integer.parseInt(input.split(" ")[1]);
             int attackedCol = Integer.parseInt(input.split(" ")[2]);
@@ -32,6 +33,9 @@ public class TheHeiganDance {
                 healthPlaier -= 3500;
             }
             healthHeigan -= damagePerTurnToBoss;
+            if (healthHeigan<= 0){
+                break;
+            }
 
             damageMatrix = damageToTheMatrix(attackedRow, attackedCol, damageMatrix);
 
@@ -41,15 +45,16 @@ public class TheHeiganDance {
                     isPoisoned = false;
 
                     if (damageMatrix[playerRow][playerCol].equals("damaged")) {
-                        if (damageMatrix[playerRow + 1][playerCol].equals("damaged") && isInBounds(damageMatrix, playerRow + 1, playerCol)) {
-                            if (damageMatrix[playerRow][playerCol + 1].equals("damaged") && isInBounds(damageMatrix, playerRow, playerCol + 1)) {
-                                if (damageMatrix[playerRow - 1][playerCol].equals("damaged") && isInBounds(damageMatrix, playerRow - 1, playerCol)) {
-                                    if (damageMatrix[playerRow][playerCol - 1].equals("damaged") && isInBounds(damageMatrix, playerRow, playerCol - 1)) {
+                        if (damageMatrix[playerRow + 1][playerCol].equals("damaged") || !isInBounds(damageMatrix, playerRow + 1, playerCol)) {
+                            if (damageMatrix[playerRow][playerCol + 1].equals("damaged") || !isInBounds(damageMatrix, playerRow, playerCol + 1)) {
+                                if (damageMatrix[playerRow - 1][playerCol].equals("damaged") || !isInBounds(damageMatrix, playerRow - 1, playerCol)) {
+                                    if (damageMatrix[playerRow][playerCol - 1].equals("damaged") || !isInBounds(damageMatrix, playerRow, playerCol - 1)) {
                                         healthPlaier -= 3500;
                                         isPoisoned = true;
 
                                         if (healthPlaier <= 0) {
                                             plearDied(healthHeigan, spell, playerRow, playerCol);
+                                            playerIsLive = false;
                                         }
                                     } else {
                                         playerCol = healthPlaier - 1;
@@ -73,14 +78,15 @@ public class TheHeiganDance {
                     isPoisoned = false;
 
                     if (damageMatrix[playerRow][playerCol].equals("damaged")) {
-                        if (damageMatrix[playerRow + 1][playerCol].equals("damaged") && isInBounds(damageMatrix, playerRow + 1, playerCol)) {
-                            if (damageMatrix[playerRow][playerCol + 1].equals("damaged") && isInBounds(damageMatrix, playerRow, playerCol + 1)) {
-                                if (damageMatrix[playerRow - 1][playerCol].equals("damaged") && isInBounds(damageMatrix, playerRow - 1, playerCol)) {
-                                    if (damageMatrix[playerRow][playerCol - 1].equals("damaged") && isInBounds(damageMatrix, playerRow, playerCol - 1)) {
+                        if (damageMatrix[playerRow + 1][playerCol].equals("damaged") || !isInBounds(damageMatrix, playerRow + 1, playerCol)) {
+                            if (damageMatrix[playerRow][playerCol + 1].equals("damaged") || !isInBounds(damageMatrix, playerRow, playerCol + 1)) {
+                                if (damageMatrix[playerRow - 1][playerCol].equals("damaged") || !isInBounds(damageMatrix, playerRow - 1, playerCol)) {
+                                    if (damageMatrix[playerRow][playerCol - 1].equals("damaged") || !isInBounds(damageMatrix, playerRow, playerCol - 1)) {
                                         healthPlaier -= 6000;
 
                                         if (healthPlaier <= 0) {
                                             plearDied(healthHeigan, spell, playerRow, playerCol);
+                                            playerIsLive = false;
                                         }
 
                                     } else {
@@ -104,12 +110,15 @@ public class TheHeiganDance {
             }
 
 
+            if (!playerIsLive ){
+                break;
+            }
             input = scanner.nextLine();
         }
 
         if (healthHeigan<=0){
             System.out.println("Heigan: Defeated!");
-            System.out.printf("Player: %d",healthPlaier);
+            System.out.printf("Player: %d%n",healthPlaier);
             System.out.printf("Final position: %d, %d", playerRow, playerCol);
         }
 
@@ -138,7 +147,11 @@ public class TheHeiganDance {
 
     private static void plearDied(double healthHeigan, String spell, int playerRow, int playerCol) {
         System.out.printf("Heigan: %.2f%n", healthHeigan);
-        System.out.printf("Player: Killed by %s%n", spell);
+        if (spell.equals("Eruption")){
+            System.out.printf("Player: Killed by %s%n", spell);
+        } else {
+            System.out.println("Player: Killed by Plague Cloud");
+        }
         System.out.printf("Final position: %d, %d", playerRow, playerCol);
     }
 
