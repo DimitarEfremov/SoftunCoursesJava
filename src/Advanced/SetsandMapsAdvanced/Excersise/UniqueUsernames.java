@@ -3,7 +3,6 @@ package Advanced.SetsandMapsAdvanced.Excersise;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class UniqueUsernames {
     public static void main(String[] args) {

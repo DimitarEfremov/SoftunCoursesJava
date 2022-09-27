@@ -31,6 +31,9 @@ public class SetsofElements {
             }
         }
 
+        // запазва само стойностите които се съдържат и във втория сет
+        //firstSet.retainAll(secondSet);
+
         for (Integer element : repeatingElements) {
             System.out.print(element + " ");
         }
