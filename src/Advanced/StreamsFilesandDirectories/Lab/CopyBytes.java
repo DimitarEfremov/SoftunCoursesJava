@@ -11,7 +11,7 @@ public class CopyBytes {
 
         FileInputStream fileInputStream = new FileInputStream(path);
 
-        FileOutputStream outputStream = new FileOutputStream("output.txt");
+        FileOutputStream outputStream = new FileOutputStream("Resources/04. Java-Advanced-Files-and-Streams-Lab-Resources/03.CopyBytesOutput.txt");
 
 
         int readBytes = fileInputStream.read();
