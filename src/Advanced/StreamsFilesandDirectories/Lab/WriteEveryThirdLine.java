@@ -12,9 +12,9 @@ public class WriteEveryThirdLine {
 
         BufferedReader input = new BufferedReader(new InputStreamReader(inputStream));
 
-        FileOutputStream fileInputStream = new FileOutputStream("Resources/04. Java-Advanced-Files-and-Streams-Lab-Resources/05.WriteEveryThirdLineOutput.txt");
+        FileOutputStream fileOutputStreamStream = new FileOutputStream("Resources/04. Java-Advanced-Files-and-Streams-Lab-Resources/05.WriteEveryThirdLineOutput.txt");
 
-        BufferedWriter output = new BufferedWriter(new OutputStreamWriter(fileInputStream));
+        BufferedWriter output = new BufferedWriter(new OutputStreamWriter(fileOutputStreamStream));
 
         int counter = 1;
 
