@@ -15,7 +15,7 @@ public class SkiTrip {
         double price = 0;
 
         switch (roomType) {
-            case "room for one person":
+            case "room for one Person":
                 price = days * 18;
                 if (score.equals("positive")){
                     price = price * 1.25;

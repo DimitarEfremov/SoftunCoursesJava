@@ -19,7 +19,7 @@ public class Harvest {
             System.out.printf("It will be a tough winter! More %.0f liters wine needed.", Math.floor(wineNeeded - wineProduced));
         } else {
             System.out.printf("Good harvest this year! Total wine: %.0f liters.%n", Math.floor(wineProduced));
-            System.out.printf("%.0f liters left -> %.0f liters per person.", wineProduced - wineNeeded, Math.ceil(wineProduced - wineNeeded) / workers);
+            System.out.printf("%.0f liters left -> %.0f liters per Person.", wineProduced - wineNeeded, Math.ceil(wineProduced - wineNeeded) / workers);
         }
 
 
