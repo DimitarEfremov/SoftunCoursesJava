@@ -15,11 +15,11 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             String[] carInfo = scanner.nextLine().split(" ");
-            Car car = new Car();
 
-            car.setBrand(carInfo[0]);
-            car.setModel(carInfo[1]);
-            car.setHorsePower(Integer.parseInt(carInfo[2]));
+            Car car =
+                    carInfo.length == 1
+                            ? new Car(carInfo[0])
+                            : new Car(carInfo[0],carInfo[1],Integer.parseInt(carInfo[2]));
 
             carsQueue.offer(car);
 
