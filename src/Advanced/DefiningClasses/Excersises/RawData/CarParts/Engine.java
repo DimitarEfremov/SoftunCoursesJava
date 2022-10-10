@@ -26,6 +26,6 @@ public class Engine {
     }
 
     public void setEnginePower(int enginePower) {
-        enginePower = enginePower;
+        this.enginePower = enginePower;
     }
 }
