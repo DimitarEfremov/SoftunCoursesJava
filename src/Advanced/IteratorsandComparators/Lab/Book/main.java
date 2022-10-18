@@ -3,7 +3,7 @@ package Advanced.IteratorsandComparators.Lab.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         Book bookOne = new Book("Animal Farm", 2003, "George Orwell");
