@@ -1,4 +1,4 @@
-package Advanced.DefiningClasses.Excersises.PokémonTrainer;
+package Advanced.DefiningClasses.Excersises.PokemonTrainer;
 
 public class PokemonPT {
     private String name;

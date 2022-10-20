@@ -1,6 +1,5 @@
-package Advanced.DefiningClasses.Excersises.PokémonTrainer;
+package Advanced.DefiningClasses.Excersises.PokemonTrainer;
 
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -37,6 +36,17 @@ public class Main {
 
             input = scanner.nextLine();
         }
+
+        input = scanner.nextLine();
+
+        while (!input.equals("End")){
+
+
+
+
+            input = scanner.nextLine();
+        }
+
 
         System.out.println();
     }
