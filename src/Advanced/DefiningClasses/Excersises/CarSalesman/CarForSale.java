@@ -58,8 +58,8 @@ public class CarForSale {
         } else {
             System.out.printf("Color: %s%n",color);
         }
-
     }
+
 
     public String getModel() {
         return model;

@@ -18,7 +18,7 @@ public class EngineForSale {
         // V4-33 140 28 B
 
         if (parts.length >= 3){
-            if (parts[2].matches("[A-Za-z]")){
+            if (parts[2].matches("[A-Za-z+]+")){
                 efficiency = parts[2];
             } else {
                 displacement = Integer.parseInt(parts[2]);
