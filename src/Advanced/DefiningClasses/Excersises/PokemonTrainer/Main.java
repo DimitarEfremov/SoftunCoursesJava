@@ -1,5 +1,6 @@
 package Advanced.DefiningClasses.Excersises.PokemonTrainer;
 
+import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -37,17 +38,30 @@ public class Main {
             input = scanner.nextLine();
         }
 
-        input = scanner.nextLine();
+        String element = scanner.nextLine();
 
-        while (!input.equals("End")){
+        while (!element.equals("End")){
+
+            for (TrainerPT trainerPT : trainerSet) {
+                String finalElement = element;
+                if (trainerPT.getPokemonList().stream().noneMatch(p -> p.getElement().equals(finalElement))){
+                   trainerPT.hurtPokemon();
+               } else {
+                    trainerPT.setBadges(trainerPT.getBadges()+1);
+                }
+            }
 
 
 
 
-            input = scanner.nextLine();
+            element = scanner.nextLine();
         }
 
+        trainerSet.stream().sorted((a,b) -> Integer.compare(b.getBadges(), a.getBadges())).forEach(tr -> {
+            System.out.printf("%s %d %d%n", tr.getName(),tr.getBadges(),tr.getPokemonList().size());
 
-        System.out.println();
+        });
+
+
     }
 }

@@ -54,47 +54,21 @@ public class PersonForGoogle {
         }
 
         System.out.println("Pokemon:");
-        for (String s : pokemon) {
-            System.out.println(s);
+        if (!pokemon.isEmpty()){
+            pokemon.forEach(e -> System.out.printf("%s%n", e));
         }
 
         System.out.println("Parents:");
-        for (String s : parents) {
-            System.out.println(s);
+        if (!parents.isEmpty()){
+            parents.forEach(e -> System.out.printf("%s%n", e));
         }
 
         System.out.println("Children:");
-        for (String s : children) {
-            System.out.println(s);
+        if (!children.isEmpty()){
+            children.forEach(e -> System.out.printf("%s%n", e));
         }
 
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public String getName() {
@@ -110,7 +84,12 @@ public class PersonForGoogle {
     }
 
     public void setCompany(String company) {
-        this.company = company;
+
+        String[] parts = company.split(" ");
+
+        Double salary = Double.valueOf(parts[2]);
+
+        this.company = String.format("%s %s %.2f",parts[0], parts[1], salary);
     }
 
     public List<String> getPokemon() {

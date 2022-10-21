@@ -15,9 +15,22 @@ public class TrainerPT {
         pokemonList = new ArrayList<>();
     }
 
+
+    public void hurtPokemon(){
+        for (PokemonPT pokemon : pokemonList) {
+            pokemon.setHealth(pokemon.getHealth() - 10);
+            if (pokemon.getHealth()<= 0){
+                pokemonList.remove(pokemon);
+                return;
+            }
+        }
+
+    }
+
     public void addPokemon(PokemonPT pokemonPT){
         this.pokemonList.add(pokemonPT);
     }
+
 
     public String getName() {
         return name;
