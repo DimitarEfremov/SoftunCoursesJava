@@ -1,4 +1,4 @@
-package shelter;
+package Advanced.Exam.shelter;
 
 public class Animal {
 

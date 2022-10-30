@@ -1,3 +1,5 @@
+package Advanced.Exam;
+
 import java.util.Scanner;
 
 public class RallyRacing {

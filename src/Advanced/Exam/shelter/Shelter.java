@@ -1,4 +1,4 @@
-package shelter;
+package Advanced.Exam.shelter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,7 +53,7 @@ public class Shelter {
     public String getStatistics(){
 
         StringBuilder result = new StringBuilder();
-        result.append("The shelter has the following animals:");
+        result.append("The Advanced.Exam.shelter has the following animals:");
 
         for (Animal animal : data) {
             result.append(System.lineSeparator()).append(animal.getName()).append(" ").append(animal.getCaretaker());

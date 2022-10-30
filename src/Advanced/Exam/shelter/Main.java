@@ -1,4 +1,4 @@
-package shelter;
+package Advanced.Exam.shelter;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,7 +38,7 @@ public class Main {
 
 // Get Statistics
         System.out.println(shelter.getStatistics());
-//The shelter has the following animals:
+//The Advanced.Exam.shelter has the following animals:
 //Bela Sia
 //Stormy George
 
