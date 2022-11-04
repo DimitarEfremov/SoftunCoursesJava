@@ -1,4 +1,4 @@
-package PizzaCalories;
+package OOP.Encapsulation.Excersise.PizzaCalories;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +16,8 @@ public class Topping {
 
     private void setToppingType(String toppingType) {
         List<String> validTopics = Arrays.asList("Meat", "Veggies", "Cheese", "Sauce");
-        if (!validTopics.contains(toppingType)){
-            throw new IllegalArgumentException(String.format("Cannot place %s on top of your pizza.",toppingType));
+        if (!validTopics.contains(toppingType)) {
+            throw new IllegalArgumentException(String.format("Cannot place %s on top of your pizza.", toppingType));
         } else {
             this.toppingType = toppingType;
         }
@@ -26,8 +26,8 @@ public class Topping {
     }
 
     private void setWeight(double weight) {
-        if (weight < 1 || weight >50){
-            throw new IllegalArgumentException(String.format("%s weight should be in the range [1..50].",toppingType));
+        if (weight < 1 || weight > 50) {
+            throw new IllegalArgumentException(String.format("%s weight should be in the range [1..50].", toppingType));
         } else {
             this.weight = weight;
         }
@@ -35,24 +35,20 @@ public class Topping {
     }
 
     public double calculateCalories() {
-        double calorieResult = 0;
 
         switch (toppingType) {
             case "Meat ":
-                calorieResult = weight * 1.2;
-                break;
+                return weight * 1.2 * 2;
             case "Veggies":
-                calorieResult = weight * 0.8;
-                break;
+                return weight * 0.8 * 2;
             case "Cheese":
-                calorieResult = weight * 1.1;
-                break;
+                return weight * 1.1 * 2;
             case "Sauce":
-                calorieResult = weight * 0.9;
-                break;
+                return weight * 0.9 * 2;
+            default:
+                return 0;
+
         }
-
-        return calorieResult*2;
-
     }
+
 }

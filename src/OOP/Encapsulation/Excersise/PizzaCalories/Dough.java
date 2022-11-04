@@ -1,4 +1,4 @@
-package PizzaCalories;
+package OOP.Encapsulation.Excersise.PizzaCalories;
 
 public class Dough {
     private String flourType;
