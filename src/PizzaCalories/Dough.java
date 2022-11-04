@@ -18,6 +18,7 @@ public class Dough {
         } else {
             this.flourType = flourType;
         }
+
     }
 
     private void setBakingTechnique(String bakingTechnique) {
@@ -26,6 +27,7 @@ public class Dough {
         } else {
             this.bakingTechnique = bakingTechnique;
         }
+
     }
 
     private void setWeight(double weight) {
@@ -34,6 +36,7 @@ public class Dough {
         } else {
             this.weight = weight;
         }
+
     }
 
     public double calculateCalories() {

@@ -21,6 +21,8 @@ public class Topping {
         } else {
             this.toppingType = toppingType;
         }
+
+
     }
 
     private void setWeight(double weight) {
@@ -29,6 +31,7 @@ public class Topping {
         } else {
             this.weight = weight;
         }
+
     }
 
     public double calculateCalories() {
