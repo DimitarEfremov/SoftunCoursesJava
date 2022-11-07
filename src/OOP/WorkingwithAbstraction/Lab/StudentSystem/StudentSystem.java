@@ -37,7 +37,7 @@ public class StudentSystem {
                 } else if (student.getGrade() < 5.00 && student.getGrade() >= 3.50) {
                     builder.append(" Average student.");
                 } else {
-                    builder.append(" Very nice person.");
+                    builder.append(" Very nice OOP.Inheritance.Excersise.person.");
                 }
 
                 System.out.println(builder.toString());
