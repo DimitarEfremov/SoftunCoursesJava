@@ -1,4 +1,4 @@
-package Animals;
+package OOP.Encapsulation.Excersise.Animals;
 
 
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package Animals;
+package OOP.Encapsulation.Excersise.Animals;
 
 public class Frog extends Animal{
     public Frog(String name, int age, String gender) {
