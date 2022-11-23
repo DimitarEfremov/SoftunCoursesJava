@@ -1,4 +1,4 @@
-package DefineanInterfacePerson;
+package OOP.InterfacesAndAbstraction.Excersise.BirthdayCelebrations;
 
 public class Citizen implements Person, Identifiable, Birthable{
 
