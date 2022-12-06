@@ -1,5 +1,8 @@
 package barracksWars.core;
 
+import barracksWars.core.commands.AddUnitCommand;
+import barracksWars.core.commands.FightCommand;
+import barracksWars.core.commands.ReportCommand;
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.Runnable;
 import barracksWars.interfaces.Unit;
@@ -48,13 +51,16 @@ public class Engine implements Runnable {
 		String result;
 		switch (commandName) {
 			case "add":
-				result = this.addUnitCommand(data);
+				AddUnitCommand addUnitCommand = new AddUnitCommand(data, repository, unitFactory);
+				result = addUnitCommand.execute();
 				break;
 			case "report":
-				result = this.reportCommand(data);
+				ReportCommand reportCommand = new ReportCommand(data, repository, unitFactory);
+				result = reportCommand.execute();
 				break;
 			case "fight":
-				result = this.fightCommand(data);
+				FightCommand fightCommand = new FightCommand(data, repository, unitFactory);
+				result = fightCommand.execute();
 				break;
 			default:
 				throw new RuntimeException("Invalid command!");
@@ -62,20 +68,5 @@ public class Engine implements Runnable {
 		return result;
 	}
 
-	private String reportCommand(String[] data) {
-		String output = this.repository.getStatistics();
-		return output;
-	}
 
-	private String addUnitCommand(String[] data) throws ExecutionControl.NotImplementedException {
-		String unitType = data[1];
-		Unit unitToAdd = this.unitFactory.createUnit(unitType);
-		this.repository.addUnit(unitToAdd);
-		String output = unitType + " added!";
-		return output;
-	}
-	
-	private String fightCommand(String[] data) {
-		return "fight";
-	}
 }
