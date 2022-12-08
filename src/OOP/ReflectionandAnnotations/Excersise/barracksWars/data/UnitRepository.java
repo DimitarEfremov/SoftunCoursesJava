@@ -1,8 +1,7 @@
-package barracksWars.data;
+package OOP.ReflectionandAnnotations.Excersise.barracksWars.data;
 
-import barracksWars.interfaces.Repository;
-import barracksWars.interfaces.Unit;
-import jdk.jshell.spi.ExecutionControl;
+import OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces.Repository;
+import OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces.Unit;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -38,8 +37,12 @@ public class UnitRepository implements Repository {
 		return statBuilder.toString();
 	}
 
-	public void removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
-		// TODO: implement for problem 4
-		throw new ExecutionControl.NotImplementedException("message");
+	public void removeUnit(String unitType) {
+		if (amountOfUnits.containsKey(unitType) && amountOfUnits.get(unitType) >= 1){
+			int currentAmountOfUnits = amountOfUnits.get(unitType);
+			amountOfUnits.put(unitType,currentAmountOfUnits-1);
+		} else {
+			throw new IllegalArgumentException("No such units in repository.");
+		}
 	}
 }

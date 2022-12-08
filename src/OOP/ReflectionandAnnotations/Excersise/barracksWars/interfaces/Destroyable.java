@@ -1,4 +1,4 @@
-package barracksWars.interfaces;
+package OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces;
 
 public interface Destroyable {
     

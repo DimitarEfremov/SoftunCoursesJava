@@ -1,9 +1,9 @@
-package barracksWars.core.commands;
+package OOP.ReflectionandAnnotations.Excersise.barracksWars.core.commands;
 
 
-import barracksWars.interfaces.Executable;
-import barracksWars.interfaces.Repository;
-import barracksWars.interfaces.UnitFactory;
+import OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces.Executable;
+import OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces.Repository;
+import OOP.ReflectionandAnnotations.Excersise.barracksWars.interfaces.UnitFactory;
 
 public abstract class Command implements Executable {
 
